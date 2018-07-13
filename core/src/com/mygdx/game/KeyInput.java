@@ -34,6 +34,7 @@ public class KeyInput implements InputProcessor {
 			break;
 		case Keys.UP:
 			player.setmUp(true);
+			player.setAnim("walkingNorth");
 			break;
 		case Keys.LEFT:
 			player.setmLeft(true);
@@ -43,6 +44,7 @@ public class KeyInput implements InputProcessor {
 			break;
 		case Keys.DOWN:
 			player.setmDown(true);
+			player.setAnim("walkingSouth");
 			break;
 		case Keys.SHIFT_LEFT:
 			if (player.currentSA >= 4) {
