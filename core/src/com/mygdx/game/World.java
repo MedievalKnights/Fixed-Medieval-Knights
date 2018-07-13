@@ -3,8 +3,8 @@ package com.mygdx.game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class World {
-	int worldLength = 1;
-	int worldWidth = 1;
+	int worldLength = 5;
+	int worldWidth = 5;
 	Region[][] world = new Region[worldLength][worldWidth];
 
 	public World() {

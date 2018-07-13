@@ -15,9 +15,9 @@ public class Region {
 	Animation<TextureRegion> background = new Animation<TextureRegion>(1f, atlasBack.getRegions());
 	OpenSimplexNoise noise = new OpenSimplexNoise();
 	int num = 0;
-	int scale = 10;
-	int[] keyFrameValues = { 0, 1, 2, 3, 4, 5 };
-	float[] threshholdValues = { 0.6f, 0.3f, 0f, -0.3f };
+	float scale = 5;
+	int[] keyFrameValues = { 1, 2, 0, 5, 4, 3 };
+	float[] threshholdValues = { 0.5f, 0.3f, 0.1f, 0,-0.2f};
 	public static final int RESX = 16;
 	public static final int RESY = 16;
 	int regionX;
