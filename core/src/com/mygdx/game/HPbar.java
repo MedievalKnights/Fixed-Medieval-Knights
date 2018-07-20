@@ -28,7 +28,7 @@ public class HPbar {
 		float HPP = player.maxHP / player.currentHP;
 		sr.setColor(1 - HPP, 1 * HPP, 0f, 0.8f);
 		// sr.rect(15-x, y-80, width, height);
-		sr.rect(50, 825, width, height);
+		sr.rect(50, 825, player.currentHP*2, height);
 		sr.end();
 		batch.begin();
 	}

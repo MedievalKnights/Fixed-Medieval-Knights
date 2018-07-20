@@ -101,8 +101,10 @@ public void Running() {
     public void damage(float damage) {
         if (currentHP - damage < 0)
             currentHP = 0;
-       
+        //put game over screen here
+        
         else
+        	
             currentHP -= damage;
     }
  
@@ -211,6 +213,7 @@ public void Running() {
         saBar.draw(batch);
         batch.draw(getAnimation(), x, y , 128, 128);
         Running();
+        
     }
  
     public Texture getImg() {
