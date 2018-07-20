@@ -36,6 +36,7 @@ public class GameScreen {
 	}
 
 	public void render(SpriteBatch batch) {
+		SoundHandler.gameScreenMusic();
 		player.move();
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

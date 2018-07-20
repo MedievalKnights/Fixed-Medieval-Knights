@@ -8,6 +8,7 @@ import com.badlogic.gdx.audio.Sound;
 
 public class SoundHandler {
 	private static Music mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/mainMenuMusic.mp3"));
+	private static Music gameScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/SnakeCharmer1.mp3"));
 //	private static Music piano = Gdx.audio.newMusic(Gdx.files.internal("sounds/piano.mp3"));
 	//private static Music bossMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/BossBattle.wav"));
 	
@@ -22,7 +23,10 @@ public class SoundHandler {
 	public static void stopMainMenuMusic() { 
 		mainMenuMusic.stop();
 	}
-	
+public static void gameScreenMusic() {
+	gameScreenMusic.setLooping(true);
+	gameScreenMusic.play();
+	}
 	/*
 	public static float getRandomPitch() {
 		float pitch = new Random().nextFloat()*1.5f+0.5f;
