@@ -175,14 +175,14 @@ public void Running() {
                 camera.translate(0, tempSpeed);
             }
         } else if (mUp == false && mDown == true) {
-            if (y > 0) {
+            if (y > -maxY) {
                 y -= tempSpeed;
                 camera.translate(0, -tempSpeed);
             }
         }
  
         if (mLeft == true && mRight == false) {
-            if (x > 0) {
+            if (x > -maxX) {
                 x -= tempSpeed;
                 camera.translate(-tempSpeed, 0);
             }

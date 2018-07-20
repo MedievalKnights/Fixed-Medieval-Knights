@@ -11,10 +11,11 @@ public class Tile {
 	boolean isRendered;
 	double speedModifier;
 
-	public Tile(int X, int Y, TextureRegion background) {
+	public Tile(int X, int Y, TextureRegion background, boolean isOb) {
 		x = X;
 		y = Y;
 		tile = background;
+		isObstacle = isOb;
 	}
 
 	public int getX() {
@@ -64,6 +65,5 @@ public class Tile {
 	public void setSpeedModifier(double speedModifier) {
 		this.speedModifier = speedModifier;
 	}
-	
 	
 }

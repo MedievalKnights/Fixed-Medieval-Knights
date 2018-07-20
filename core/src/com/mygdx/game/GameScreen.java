@@ -24,12 +24,13 @@ public class GameScreen {
 		inputs = new KeyInput();
 	
 		// background = new Texture("atlases/Grass_Complete_RPG.png");
-		player = new Player(5, 2, "John", "A Guy", new Texture("sprites/New_Piskel.png"), 150, 150, world.getWorldX(),
-				world.getWorldY());
+		player = new Player(5, 2, "John", "A Guy", new Texture("sprites/New_Piskel.png"), 150, 150, 999999999,
+				999999999);
 		// player = new Player(100, 100, 100, 100, 5, 2, "John", "A Guy", new
 		// Texture("New_Piskel.png"), 150, 150, world.getWorldX(), world.getWorldY());
 
 		inputs.setPlayer(player);
+		world.setPlayer(player);
 		Gdx.input.setInputProcessor(inputs);
 
 		game.gameState++;

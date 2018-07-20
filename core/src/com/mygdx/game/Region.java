@@ -14,7 +14,7 @@ public class Region {
 
 	Animation<TextureRegion> background = new Animation<TextureRegion>(1f, atlasBack.getRegions());
 	OpenSimplexNoise noise = new OpenSimplexNoise();
-	int seed = 14433;
+	int seed = 1253;
 	int num = 0;
 	float scale = 20;
 	int[] keyFrameValues = { 1, 2, 0, 5, 4, 3 };
@@ -33,11 +33,11 @@ public class Region {
 				double value = noise.eval((i + (rX / 64)) / scale+seed, (j + (rY / 64)) / scale+seed, 0.0);
 				for (int k = 0; k < threshholdValues.length; k++) {
 					if (value > threshholdValues[k]) {
-						region[i][j] = new Tile(i * 64 + regionX, j * 64 + regionY, background.getKeyFrame(keyFrameValues[k]));
+						region[i][j] = new Tile(i * 64 + regionX, j * 64 + regionY, background.getKeyFrame(keyFrameValues[k]),false);
 						k = threshholdValues.length;
 					}
 					else if(k+1 == threshholdValues.length) {
-						region[i][j] = new Tile(i * 64 + regionX, j * 64 + regionY, background.getKeyFrame(keyFrameValues[k+1]));
+						region[i][j] = new Tile(i * 64 + regionX, j * 64 + regionY, background.getKeyFrame(keyFrameValues[k+1]),true);
 					}
 				}
 			}
@@ -50,6 +50,14 @@ public class Region {
 				Tile t = region[i][j];
 				batch.draw(t.getTile(), t.getX(), t.getY(), 64, 64);
 			}
+		}
+	}
+	public boolean canBeWalkedOn(int x, int y) {
+		if(region[x][y].isObstacle) {
+			return false;
+		}
+		else {
+			return true;
 		}
 	}
 }
