@@ -5,32 +5,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public class StaminaBar {
+public class EnemyStaminaBar {
 	ShapeRenderer sr = new ShapeRenderer();
-	Player player;
 	Enemies enemy; 
 	
 	int width = 200;	
 	final int height = 20;
 	
-	public void setPlay(Player play) {
-		player=play;
-	}
-	
-	public void setPlay(Enemies enemy) {
+	public void setEnemy(Enemies enemy) {
 		enemy=enemy;
 	}
 	
-	public void draw(SpriteBatch batch){
-		batch.end();
-		sr.begin(ShapeType.Filled);
-		int x = Gdx.graphics.getWidth()/2;
-		int y = Gdx.graphics.getHeight()/2;
-		sr.setColor(0f,0f,255f,0.8f);
-		sr.rect(50, 800, player.currentSA*2, height);
-		sr.end();
-		batch.begin();
-	}
 	
 	public void drawEnemy(SpriteBatch batch){
 		batch.end();
