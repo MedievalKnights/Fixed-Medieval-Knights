@@ -116,16 +116,19 @@ public class Menu {
 
 	}
 	public void getButtonInput() {
-
-		if (startButton.isPressed()) {
-			System.out.println("PRESSED!");
-			//gameScreen.startGame();
-
 		if(startButton.isPressed()) {
 			game.startGame();
 
 		}
+		if(startButton.isPressed()) {
+			game.startGame();
+
+		}
+		if(exitButton.isPressed()) {
+			System.exit(0);
+
+		}
 	}
 	
-	}
+	
 }
