@@ -19,6 +19,7 @@ public class MedievalKnights extends ApplicationAdapter {
 
 	Menu menuScreen = new Menu();
 	GameScreen gameScreen = new GameScreen();
+	OptionScreen optionScreen = new OptionScreen();
 
 
 	@Override
@@ -49,6 +50,11 @@ public class MedievalKnights extends ApplicationAdapter {
 
 	public void startGame() { 
 		gameScreen.create(this);
+		SoundHandler.stopMainMenuMusic();
+	}
+
+	public void startOptionScreen() { 
+		optionScreen.create(this);
 		SoundHandler.stopMainMenuMusic();
 	}
 

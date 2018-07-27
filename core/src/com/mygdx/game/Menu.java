@@ -120,8 +120,8 @@ public class Menu {
 			game.startGame();
 
 		}
-		if(startButton.isPressed()) {
-			game.startGame();
+		if(optionButton.isPressed()) {
+			game.startOptionScreen();
 
 		}
 		if(exitButton.isPressed()) {
