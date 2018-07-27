@@ -1,5 +1,7 @@
 package com.mygdx.game;
 
+import java.util.Random;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class World {
@@ -10,7 +12,6 @@ public class World {
 	Player player;
 	boolean hasPlayer;
 	Region[][] world = new Region[worldLength * 2][worldWidth * 2];
-
 	public World() {
 		for (int i = 0; i < worldLength * 2; i++) {
 			for (int j = 0; j < worldWidth * 2; j++) {
@@ -18,7 +19,7 @@ public class World {
 			}
 		}
 	}
-
+	
 	public void render(SpriteBatch batch) {
 		if (hasPlayer) {
 			if (deltaX != (int) player.x / 512 || deltaY != (int) player.y / 512) {
