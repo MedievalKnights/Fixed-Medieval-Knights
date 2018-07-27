@@ -14,7 +14,7 @@ public class Region {
 
 	Animation<TextureRegion> background = new Animation<TextureRegion>(1f, atlasBack.getRegions());
 	OpenSimplexNoise noise = new OpenSimplexNoise();
-	int seed;
+	int seed = 825;
 	double rand;
 	int num = 0;
 	float scale = 20;
@@ -26,13 +26,13 @@ public class Region {
 	int regionY;
 	Tile[][] region = new Tile[RESX][RESY];
 
-	public void getRandom() {
-		rand = Math.random() * 10000;
-		seed = (int) rand;
-	}
+//	public void getRandom() {
+//		rand = Math.random() * 10000;
+//		seed = (int) rand;
+//	}
 
 	public Region(int rX, int rY) {
-		getRandom();
+		//getRandom();
 
 		regionX = rX;
 		regionY = rY;
