@@ -21,14 +21,13 @@ public class MedievalKnights extends ApplicationAdapter {
 	GameScreen gameScreen = new GameScreen();
 	OptionScreen optionScreen = new OptionScreen();
 
-
 	@Override
 	public void create() {
 		batch = new SpriteBatch();
 		if (gameState == 0)
 			menuScreen.create(this);
-			SoundHandler.init();
-			
+		SoundHandler.init();
+
 	}
 
 	@Override
@@ -37,6 +36,9 @@ public class MedievalKnights extends ApplicationAdapter {
 			menuScreen.render(batch);
 		if (gameState == 1)
 			gameScreen.render(batch);
+		if (gameState == 2) {
+			optionScreen.render(batch);
+		}
 	}
 
 	@Override
@@ -47,18 +49,16 @@ public class MedievalKnights extends ApplicationAdapter {
 				gameScreen.dispose();
 	}
 
-
-	public void startGame() { 
+	public void startGame() {
 		gameScreen.create(this);
 		SoundHandler.stopMainMenuMusic();
 	}
 
-	public void startOptionScreen() { 
+	public void startOptionScreen() {
 		optionScreen.create(this);
 		SoundHandler.stopMainMenuMusic();
 	}
 
-	
 	public SpriteBatch getBatch() {
 		return batch;
 	}
