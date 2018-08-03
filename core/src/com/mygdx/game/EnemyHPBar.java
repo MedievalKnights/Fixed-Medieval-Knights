@@ -12,7 +12,7 @@ public class EnemyHPBar {
 	final int height = 20;
 
 	public void setEnemy(Enemies enemy) {
-		enemy=enemy;
+		this.enemy=enemy;
 	}
 	
 	public void draw(SpriteBatch batch) {

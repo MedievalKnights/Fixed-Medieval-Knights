@@ -14,7 +14,7 @@ public class GameScreen {
 	World world;
 	MedievalKnights game;
 	Player player;
-	Enemies Daddy;
+	Enemies daddy;
 	KeyInput inputs;
 	TextureRegion background;
 
@@ -25,12 +25,12 @@ public class GameScreen {
 		inputs = new KeyInput();
 	
 		// background = new Texture("atlases/Grass_Complete_RPG.png");
-		player = new Player(5, 2, "John", "A Guy", new Texture("sprites/New_Piskel.png"), 150, 150, 999999999,
-				999999999);
+		player = new Player(5, 2, "John", "A Guy", new Texture("sprites/New_Piskel.png"), 150, 150, 999999999, 999999999);
 		inputs.setPlayer(player);
 		world.setPlayer(player);
 		
-		Daddy = new Enemies(0, 1, "Jack", "A typical coder", new Texture ("sprites/slime.png"), 150, 150, 999999999, 999999999);
+		daddy = new Enemies(5, 2, "Jack", "A typical coder", new Texture ("sprites/slime.png"), 150, 150, 999999999, 999999999);
+		world.setEnemy(daddy);
 		
 		Gdx.input.setInputProcessor(inputs);
 
@@ -45,6 +45,7 @@ public class GameScreen {
 		batch.begin();
 		world.render(batch);
 		player.render(batch);
+		daddy.render(batch);
 		//batch.draw(player.getImg(), player.getX() - 32, player.getY() - 32, 128, 128);
 
 		batch.setProjectionMatrix(player.camera.combined);

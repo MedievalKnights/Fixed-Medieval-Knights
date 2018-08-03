@@ -16,7 +16,9 @@ public class World {
 	int max = 5;
 	int min = 0;
 	Player player;
+	Enemies Enemy;
 	boolean hasPlayer;
+	boolean hasEnemy;
 	Region[][] world = new Region[worldLength * 2][worldWidth * 2];
 	public World() {
 		getRandom();
@@ -69,6 +71,10 @@ public class World {
 	public void setPlayer(Player play) {
 		player = play;
 		hasPlayer = true;
+	}
+	public void setEnemy(Enemies enemy) {
+		Enemy = enemy;
+		hasEnemy = true;
 	}
 
 	public int getWorldX() {
