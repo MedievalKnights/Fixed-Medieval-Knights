@@ -51,8 +51,8 @@ public class Menu {
 
 		
 		skin.add("startButton", new Texture("buttons/startButton.jpg"));
-		skin2.add("optionButton", new Texture("buttons/optionButton.jpg"));
-		skin3.add("exitButton", new Texture("buttons/exitButton.jpg"));
+		skin2.add("optionButton", new Texture("buttons/optionButton.png"));
+		skin3.add("exitButton", new Texture("buttons/exitButton.png"));
 		
 
 		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
