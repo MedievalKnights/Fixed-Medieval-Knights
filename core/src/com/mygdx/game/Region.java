@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import java.util.HashMap;
 import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
@@ -14,9 +15,10 @@ public class Region {
 
 	Animation<TextureRegion> background = new Animation<TextureRegion>(1f, atlasBack.getRegions());
 	OpenSimplexNoise noise = new OpenSimplexNoise();
-	int seed = 825;
 	double rand;
 	int num = 0;
+	int max = 5;
+	int min = 0;
 	float scale = 20;
 	int[] keyFrameValues = { 1, 2, 0, 5, 4, 3 };
 	float[] threshholdValues = { 0.45f, 0.3f, 0.1f, 0, -0.2f };
@@ -25,15 +27,11 @@ public class Region {
 	int regionX;
 	int regionY;
 	Tile[][] region = new Tile[RESX][RESY];
+	
 
-//	public void getRandom() {
-//		rand = Math.random() * 10000;
-//		seed = (int) rand;
-//	}
+	
 
-	public Region(int rX, int rY) {
-		//getRandom();
-
+	public Region(int rX, int rY,int seed) {
 		regionX = rX;
 		regionY = rY;
 		for (int i = 0; i < RESX; i++) {
