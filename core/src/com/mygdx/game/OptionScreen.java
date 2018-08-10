@@ -18,6 +18,14 @@ public class OptionScreen {
 	Texture background;
 	Texture texture;
 	Skin skin; 
+	
+	TextButton controlButton; 
+	Skin skinButton1; 
+	TextButtonStyle textButtonStyle;
+	BitmapFont font; 
+	
+	TextureAtlas buttonAtlas; 
+	
 
 	MedievalKnights game;
 
@@ -36,6 +44,30 @@ public class OptionScreen {
 		
 		
 		game.gameState+=2;
+		
+		
+		//
+		
+		skinButton1 = new Skin(); 
+		font = new BitmapFont(); 
+		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle(); 
+
+
+		skinButton1.add("default", font);
+		skinButton1.add("controlButton", new Texture("buttons/startButton.jpg"));
+		
+		textButtonStyle.up = skinButton1.newDrawable("controlButton", Color.GRAY);
+		textButtonStyle.down = skinButton1.newDrawable("controlButton", Color.DARK_GRAY);
+		textButtonStyle.over = skinButton1.newDrawable("controlButton", Color.LIGHT_GRAY);
+		textButtonStyle.font = skinButton1.getFont("default");
+		
+		skinButton1.add("default", textButtonStyle);
+		
+		controlButton = new TextButton("", skinButton1); 
+		
+		controlButton.setBounds(Gdx.graphics.getWidth()/2-50, Gdx.graphics.getHeight()/2, 256, 128);
+		
+		stage.addActor(controlButton);
 
 
 	}
@@ -48,6 +80,7 @@ public class OptionScreen {
 		stage.act();
 		stage.draw();
 		
+		getButtonInput(); 
 	}
 
 	public void dispose() {
