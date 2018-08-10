@@ -1,25 +1,24 @@
-
-knight-sprites.png
+Knight animated.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 0001
   rotate: false
-  xy: 64, 0
+  xy: 96, 64
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 0002
   rotate: false
-  xy: 96, 0
+  xy: 0, 96
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 0003
   rotate: false
-  xy: 0, 32
+  xy: 32, 96
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
