@@ -44,16 +44,27 @@ public class Player {
     StaminaBar saBar= new StaminaBar();
     TextureAtlas walkNorthAtlas;
     TextureAtlas walkSouthAtlas;
+    TextureAtlas walkWestAtlas;
+    TextureAtlas walkEastAtlas;
+    TextureAtlas idleAtlas;
     Animation<TextureRegion> walkNorthAnimation;
     Animation<TextureRegion> walkSouthAnimation;
+    Animation<TextureRegion> walkWestAnimation;
+    Animation<TextureRegion> walkEastAnimation;
+    Animation<TextureRegion> idleAnimation;
    
     public Player(int ARMOR, int SPEED, String NAME, String DESC, Texture IMG, int X, int Y, int MaxX, int MaxY) {
         walkNorthAtlas = new TextureAtlas(Gdx.files.internal("sprites/knight-walk-north.atlas"));
         walkSouthAtlas = new TextureAtlas(Gdx.files.internal("sprites/knight-walk-south.atlas"));
+        walkEastAtlas = new TextureAtlas(Gdx.files.internal("sprites/knight-walk-east.atlas"));
+        walkWestAtlas = new TextureAtlas(Gdx.files.internal("sprites/knight-walk-west.atlas"));
+        idleAtlas = new TextureAtlas(Gdx.files.internal("sprites/knight-idle.atlas"));
         walkNorthAnimation = new Animation<TextureRegion>(1 / 3f, walkNorthAtlas.getRegions());
         walkSouthAnimation = new Animation<TextureRegion>(1 / 3f, walkSouthAtlas.getRegions());
-       
-       
+        walkEastAnimation = new Animation<TextureRegion>(1 / 3f, walkEastAtlas.getRegions());
+        walkWestAnimation = new Animation<TextureRegion>(1 / 3f, walkWestAtlas.getRegions());
+        idleAnimation = new Animation<TextureRegion>(1 / 3f, idleAtlas.getRegions());
+        
         hpBar = new HPbar();
         hpBar.setPlay(this);
         saBar = new StaminaBar();
@@ -124,8 +135,14 @@ public void Running() {
         else if (anim.equals("walkingSouth")) {
             ret = walkSouthAnimation.getKeyFrame(elapsedTime, true);
         }
+        else if (anim.equals("walkingEast")) {
+            ret = walkEastAnimation.getKeyFrame(elapsedTime, true);
+        }
+        else if (anim.equals("walkingWest")) {
+            ret = walkWestAnimation.getKeyFrame(elapsedTime, true);
+        }
         else {
-            ret = walkNorthAnimation.getKeyFrame(elapsedTime, true);
+            ret = idleAnimation.getKeyFrame(elapsedTime, true);
         }
         return ret;
        

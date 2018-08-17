@@ -20,10 +20,10 @@ public class KeyInput implements InputProcessor {
 		case Keys.W:
 			player.setmUp(true);
 			player.setAnim("walkingNorth");
-
 			break;
 		case Keys.A:
 			player.setmLeft(true);
+			player.setAnim("walkingWest");
 			break;
 		case Keys.S:
 			player.setmDown(true);
@@ -31,6 +31,7 @@ public class KeyInput implements InputProcessor {
 			break;
 		case Keys.D:
 			player.setmRight(true);
+			player.setAnim("walkingEast");
 			break;
 		case Keys.UP:
 			player.setmUp(true);
@@ -38,9 +39,11 @@ public class KeyInput implements InputProcessor {
 			break;
 		case Keys.LEFT:
 			player.setmLeft(true);
+			player.setAnim("walkingWest");
 			break;
 		case Keys.RIGHT:
 			player.setmRight(true);
+			player.setAnim("walkingEast");
 			break;
 		case Keys.DOWN:
 			player.setmDown(true);
