@@ -49,6 +49,11 @@ public class MedievalKnights extends ApplicationAdapter {
 				gameScreen.dispose();
 	}
 
+	public void startMenu() {
+		menuScreen = new Menu(); 
+		menuScreen.create(this);
+	}
+	
 	public void startGame() {
 		gameScreen.create(this);
 		SoundHandler.stopMainMenuMusic();
